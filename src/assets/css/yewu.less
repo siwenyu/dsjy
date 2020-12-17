@@ -1,0 +1,453 @@
+// 二级页面
+
+.erji {
+  width: 1240px;
+  display: flex;
+  font-size: 14px;
+  line-height: 26px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  .right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 920px;
+    flex-grow: 0;
+    padding: 0 0px 50px 0px;
+    background: #fff;
+    flex-grow: 1;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 113, 254, .1);
+  }
+
+  .news-list {
+    min-height: 400px;
+    padding-top: 0;
+
+    .news-item.hover-item:hover {
+      border-bottom: none;
+    }
+  }
+
+  .shengyuansulan-item {
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    padding-left: 0;
+  }
+}
+
+.erji-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .85);
+  line-height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.erji-sub-title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.erji-normal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6D7278;
+  width: 100%;
+  border-bottom: 1px solid #EDEDED;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+
+  span {
+    color: #0091FF;
+    margin-left: 5px;
+  }
+}
+
+.erji-gray-bg-text {
+  background: #F6F6F6;
+  color: rgba(0, 0, 0, .5);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+  width: 100%;
+  padding-left: 24px;
+
+  span {
+    margin-right: 30px;
+  }
+}
+
+.erji-list {
+  font-size: 18px;
+  color: #6D7278;
+  display: flex;
+  line-height: 48px;
+
+  .erji-list-item-left1 {
+    width: 100px;
+    text-align:justify;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-align-last: justify; 
+  }
+}
+
+.erji-down {
+  a {
+    cursor: pointer;
+    line-height: 38px;
+  }
+  a:hover {
+    color: #1890ff;
+  }
+}
+
+// 通知公告
+.news-item {
+  display: flex;
+  font-size: 16px;
+  color: #333;
+  line-height: 47px;
+  height: 47px;
+  justify-content: flex-start;
+  cursor: pointer;
+  align-items: center;
+  padding-left: 40px;
+  transition: all 0.1s;
+  position: relative;
+  margin-top: -1px;
+  border-radius: 6px;
+
+  .time {
+    color: #6D7278;
+    width: 120px;
+    flex-shrink: 0;
+    margin-left: 24px;
+    margin-right: 20px;
+    font-weight: normal;
+  }
+
+  .title {
+    margin-right: 24px;
+    line-height: 30px;
+  }
+}
+
+.hover-item-nobg:hover {
+  color: #0091FF;
+}
+
+.news-item.hover-item:hover {
+  border-bottom: 1px solid #EDF7FF;
+}
+
+.hover-item:hover {
+  background: #EDF7FF;
+  color: #0091FF;
+  z-index: 3;
+
+  .line-bottom {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  > * {
+    color: #0091FF;
+    transition: all 0s;
+  }
+
+  .title16 {
+    color: #0091FF;
+  }
+
+  .preach-item-tag {
+    color: #0091FF;
+    .job {
+      transition: all 0s;
+    }
+  }
+}
+
+// 日历
+.ant-picker-calendar-header .ant-picker-calendar-mode-switch {
+  display: none;
+}
+
+.home-rili .ant-picker-calendar-header {
+  padding: 18px 14px 0;
+}
+.home-rili .ant-picker-calendar .ant-picker-panel {
+  border-radius: 6px;
+}
+
+.home-rili .ant-picker-calendar .ant-picker-panel .ant-picker-body {
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.erji-form {
+  position: relative;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+
+  .ant-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .name {
+    position: relative;
+    height: 48px;
+    width: 400px;
+    margin-left: 24px;
+    display: inline-block;
+
+    svg {
+      font-size: 30px;
+    }
+
+    .name-btn {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      color: #0091FF;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 48px;
+      cursor: pointer;
+    }
+
+    .ant-input-affix-wrapper {
+      height: 48px;
+
+      .ant-input {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+        padding-left: 36px;
+      }
+    }
+  }
+  
+
+  .form-item {
+    width: 187px;
+    display: inline-block;
+    margin-left: 10px;
+    flex-grow: 1;
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .ant-select {
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 48px;
+      display: block;
+
+      svg {
+        font-size: 16px;
+      }
+
+      .ant-select-selection-placeholder {
+        line-height: 48px;
+        color: #000;
+        opacity: 1;
+      }
+
+      .ant-select-selection-item {
+        line-height: 48px;
+        color: #000;
+        font-weight: bold;
+      }
+      
+      .ant-select-selector {
+        height: 48px;
+
+        .ant-select-arrow {
+          transform: scaleX(1.3);
+          right: 16px;
+        }
+      }
+    }
+  }
+
+  .ant-cascader-input {
+    height: 48px;
+    color: #000;
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 18px;
+  }
+  .ant-cascader-input::-webkit-input-placeholder {
+    height: 48px;
+    color: #000;
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 18px;
+  }
+
+  .ant-cascader-picker svg {
+    font-size: 16px;
+  }
+  .ant-cascader-picker-label {
+    height: 48px;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+}
+
+.ant-form {
+  .xingzhi {
+    width: 137px;
+  }
+}
+
+.job {
+  color: #0091FF;
+}
+
+.am-toast-notice-content .am-toast-text {
+  background: none;
+}
+
+@font-face {
+  font-family: "iconfont logo";
+  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834');
+  src: url('https://at.alicdn.com/t/font_985780_km7mi63cihi.eot?t=1545807318834#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.woff?t=1545807318834') format('woff'),
+    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.ttf?t=1545807318834') format('truetype'),
+    url('https://at.alicdn.com/t/font_985780_km7mi63cihi.svg?t=1545807318834#iconfont') format('svg');
+}
+
+.erji .ant-pagination-item a {
+  font-weight: normal;
+}
+
+.erji .ant-pagination-item-active a {
+  font-weight: bold;
+}
+
+.ant-back-top {
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(16, 136, 233);
+}
+.pre-content {
+  line-height: 30px;
+
+  hr {
+    box-sizing: content-box;
+    height: 1px;
+    overflow: visible;
+    color: #ededed;
+    background: #ededed;
+    border: none;
+  }
+
+  img {
+    margin-top: 45px;
+    max-width: calc(100% - 60px);
+  }
+}
+.pre-content table tr td {
+  border: 1px solid #ccc;
+}
+
+.company-logo {
+  width: 100px;
+  height: 100px;
+  padding: 14px;
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  background: #F6F6F6;
+  margin-top: 30px;
+
+  img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+}
+
+.shouxu-item {
+  margin: 0 24px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+  .shouxu-item-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 11px;
+    display: inline-block;
+    background: #0091FF;
+  }
+}
+
+.erji .zhaopinxuzhi-list {
+  width: 100%;
+  padding-top: 24px;
+  min-height: 400px;
+
+  .shengyuansulan-item {
+    border-bottom: 1px solid #ededed;
+    padding-left: 24px;
+    width: calc(100% - 48px);
+  }
+  
+}
+
+.normal-title-before-div {
+  position: absolute;
+  left: 23px;
+  top: 23px;
+}
+
+.normal-title-before {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.normal-card {
+  .ant-tabs {
+    .ant-tabs-nav {
+      padding-left: 40px;
+    }
+  }
+}
+
+.normal-card {
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 113, 254, .1);
+  background: #fff;
+}
+
+.ant-tabs-top > .ant-tabs-nav::before, .ant-tabs-top > div > .ant-tabs-nav::before {
+  border: none;
+}

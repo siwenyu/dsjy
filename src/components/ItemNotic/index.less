@@ -1,0 +1,52 @@
+.zhaopin-wrap {
+  border: 1px solid #F2F2F2;
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  flex-grow: 1;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 6px 5px;
+
+  .zhaopin-item {
+    height: 60px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .zhaopin-item-title {
+      font-size: 16px;
+      color: #333;
+      width: 100%;
+    }
+
+    .zhaopin-item-zhiweinum {
+      margin-left: 16px;
+      color: #0091FF;
+    }
+
+    .zhaopin-item-tag {
+      width: 100%;
+      font-size: 14px;
+      font-weight: normal;
+      color: #AAADB1;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+}
+
+.zhaopin-wrap:hover {
+  .zhaopin-item {
+    .zhaopin-item-title {
+      color: #0091FF;
+    }
+
+    .zhaopin-item-tag {
+      color: #0091FF;
+    }
+  }
+}
