@@ -47,7 +47,7 @@ export default function Header() {
   const navClick = (e) => {
     console.log('点击了');
     console.log(e);
-    if (e.text === '东师高师就业联盟网') {
+    if (e.text === '东北高师就业联盟网') {
       window.open(e.path);
     } else {
       history.push(e.path);

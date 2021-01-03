@@ -55,7 +55,7 @@ export const navList = [
     path: '/aboutus?headerNav=14&secLNav=16'
   },
   {
-    text: '东师高师就业联盟网',
+    text: '东北高师就业联盟网',
     isActive: false,
     list: [],
     path: 'http://union.nenu.edu.cn/',
