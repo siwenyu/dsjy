@@ -5,7 +5,7 @@ import './index.less';
 const hot = require('../../assets/images/news-top.png');
 
 export default function RiliItem({
-  time, type
+  time, type, isOver,
 }) {
   const timeObj = new Date(new Date(time.replace(/-/g, "/")));
   
@@ -16,7 +16,7 @@ export default function RiliItem({
   let mm = timeObj.getMinutes();
   mm = `${mm}`.length > 1 ? mm : `0${mm}`;
   return (
-    <div className={`rili-item rili-item${type}`}>
+    <div className={`rili-item rili-item${type} ${isOver && 'rili-item-over'}`}>
       <div className="line-top"><div>{h}<span>:</span>{mm}</div></div>
       <div className="line"></div>
       <div className="line-bottom">

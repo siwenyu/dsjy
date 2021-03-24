@@ -25,7 +25,7 @@ export default function PreachItem({
     <div key={data.name} className="preach-item hover-item" onClick={() => itemClick(data)}>
       <div>
         <div className="rili">
-          <RiliItem time={`${data.preachDate} ${data.start}`} type={data.listWeight > 0 ? '1' : '2'} />
+          <RiliItem time={`${data.preachDate} ${data.start}`} isOver={data.status == 'OVER'} type={data.listWeight > 0 ? '1' : '2'} />
         </div>
         <div className="preach-item-title">
           <div className="c-line-clamp1 pre-content title16" dangerouslySetInnerHTML={{__html: `${data.name}`}}></div>

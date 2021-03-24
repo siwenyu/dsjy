@@ -34,6 +34,18 @@ import searchIcon from '../../assets/images/search-icon.png';
 
 const { Option } = Select;
 
+const placeList = [{
+  code: '-1',
+  name: '全部',
+},{
+  code: '本部校区',
+  name: '本部校区',
+},
+{
+  code: '净月校区',
+  name: '净月校区',
+}]
+
 
 export default function ErjiList({
   type, onSearchChange, isShowList
@@ -45,6 +57,7 @@ export default function ErjiList({
   const [regions, setRegions] = useState([]);
   const [industriesList, setIndustriesList] = useState([]);
   const [searchName, setSearchName] = useState('');
+  const [placeSelect, setPlaceSelect] = useState('');
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(1);
   const [list, setList] = useState([]);
@@ -64,8 +77,6 @@ export default function ErjiList({
   const hangyeRes = {};
 
   const getPath = (value) => {
-    console.log('valueMap');
-    console.log(valueMap);
     const path = [];
     let current = valueMap[value];
     while (current) {
@@ -87,8 +98,6 @@ export default function ErjiList({
   }
 
   const getPathHangye = (value) => {
-    console.log('hangyeValueMap');
-    console.log(hangyeValueMap);
     const path = [];
     let current = hangyeValueMap[value];
     while (current) {
@@ -127,10 +136,16 @@ export default function ErjiList({
   }
   if (type === 'notices') {
     searchParams = searchParamsNotices;
+    if (getParam('normal') != null) {
+      searchParams.normal = getParam('normal');
+    }
   }
   if (type === 'jobs') {
     if (getParam('companyName')) {
       searchParamsJobs.company.name = getParam('companyName');
+    }
+    if (getParam('normal') != null) {
+      searchParamsJobs.normal = getParam('normal');
     }
     searchParams = searchParamsJobs;
   }
@@ -237,16 +252,13 @@ export default function ErjiList({
     onFormChange({ searchName });
   }
   
-  const onFormChange = ({ searchName, page, regionsSelectNow, hangyeSelectNow }) => {
+  const onFormChange = ({ searchNameNow, page, regionsSelectNow, hangyeSelectNow, placeSelectNow }) => {
     // 名字搜索不为空
-    if (searchName || searchParams.company.name) {
-      searchParams.company.name = searchName || searchParams.company.name;
-    } else {
-      searchParams.company.name = '';
-    }
+    searchNameNow = searchNameNow || searchName;
+    // 名字
+    searchParams.company.name = searchNameNow || '';
+    // 其他数据
     const _params = form.getFieldValue();
-    console.log('_params');
-    console.log(_params);
     // 如果是职位搜索，则是全职、兼职、实习
     if (type === 'jobs') {
       searchParams.nature = _params.nature;
@@ -301,7 +313,12 @@ export default function ErjiList({
         }
       });
     }
-    
+
+    // 校区
+    if (placeSelectNow || placeSelectNow == undefined || _params.place) {
+      const _placeSelectNow = placeSelectNow || (_params.place == -1 ? '' : _params.place);
+      searchParams.place.campus = _placeSelectNow == -1 ? '' : _placeSelectNow;
+    }
 
     // 识别类型
     getApi()({ ...searchParams, page: page || 1, pageSize: type === 'jobsFair' ? 20 : 10 }).then(resData => {
@@ -340,11 +357,16 @@ export default function ErjiList({
     }
   };
 
+  // 校区
+  const onPlaceChange = (data) => {
+    setPlaceSelect(data);
+    setTimeout(() => {
+      onFormChange({ placeSelectNow: data });
+    }, 200);
+  }
+
   // 地区选择
   const onRegionsChange = (data, index) => {
-    console.log('onRegionsChange');
-    console.log(data, index);
-    console.log(getPath(data));
     setRegionsSelect(getPath(data));
     setTimeout(() => {
       onFormChange({ regionsSelectNow: getPath(data) });
@@ -353,8 +375,6 @@ export default function ErjiList({
 
   // 行业
   const onIndustriesChange = (data) => {
-    console.log('onIndustriesChange');
-    console.log(data);
     setHangyeSelect(getPathHangye(data));
     setTimeout(() => {
       onFormChange({ hangyeSelectNow: getPathHangye(data) });
@@ -363,9 +383,6 @@ export default function ErjiList({
 
   // name
   const searchNamechange = (e, index) => {
-    console.log(e);
-    console.log(e.currentTarget);
-    console.log(e.currentTarget.value);
     setSearchName(e.currentTarget.value);
   }
 
@@ -393,6 +410,23 @@ export default function ErjiList({
               </Fragment>
             </Form.Item>
           </div>
+          {
+            type == 'preaches' && (
+              <div className="form-item xingzhi">
+                <Form.Item
+                    name="place"
+                  >
+                  <Select allowClear onChange={onPlaceChange} listHeight={240} placeholder="校区">
+                    {
+                      placeList.map(e => {
+                        return <Option value={e.code} key={e.code}>{e.name}</Option>
+                      })
+                    }
+                  </Select>
+                </Form.Item>
+              </div>
+            )
+          }
           <div className="form-item xingzhi">
             <Form.Item
                 name="nature"

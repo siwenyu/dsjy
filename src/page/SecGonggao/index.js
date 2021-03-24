@@ -51,7 +51,7 @@ export default function SecGonggao() {
         <div className="right">
           <RightTopNav />
           <div className="news-list">
-            <NormalList pathName={'detailgonggao'} list={list} hasTime={false} hasBefore={true} beforeType={2}/>
+            <NormalList showNum={10} pathName={'detailgonggao'} list={list} hasTime={false} hasBefore={true} beforeType={2}/>
           </div>
 
           <Pagination defaultCurrent={1} onChange={onChange} total={total} showSizeChanger={false} />

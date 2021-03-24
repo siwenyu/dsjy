@@ -17,7 +17,10 @@ export const searchParamsPreaches = {
       cityCode: '',
       countryCode: '',
     }
-  }
+  },
+  place: {
+    campus: '',
+  },
 };
 
 // {

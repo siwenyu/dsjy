@@ -61,7 +61,17 @@ export default function BranchLilunxuexi() {
                   <Fragment>
                     {
                       list.map((item, indexIndex) => {
-                        return <ItemNews pathName="normaldetail" hasTime={false} hasHover={true} key={item.title} hasBefore={true} hasTimeAfter={true} beforeType={2} data={item} />
+                        return <ItemNews
+                          onClick={() => window.open(`/normaldetail?id=${item.infoId}&secRNav=23&headerNav=13`)}
+                          pathName="normaldetail"
+                          hasTime={false}
+                          hasHover={true}
+                          key={item.title}
+                          hasBefore={true}
+                          hasTimeAfter={true}
+                          beforeType={2}
+                          data={item}
+                        />
                       })
                     }
                   </Fragment>

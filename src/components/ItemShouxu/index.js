@@ -10,7 +10,7 @@ export default function ShouxuItem({
 }) {
   const history = useHistory();
   const goPage = (e) => {
-    window.open(`/normaldetail?id=${e.infoId}&secLNav=10&headerNav=12`);
+    window.open(`/normaldetail?id=${e.infoId}&secLNav=10&headerNav=11`);
   };
 
   return (

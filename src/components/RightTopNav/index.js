@@ -42,7 +42,7 @@ export default function RightTopNav({
   return (
     <div className="right-top-nav">
       <span>
-        首页 &nbsp; 
+        首页 &nbsp;
         {
           navData.length > 0 && (
             navData.map(e => {
