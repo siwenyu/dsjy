@@ -129,6 +129,7 @@ export default function ErjiList({
   let searchParams = {};
   if (type === 'preaches') {
     searchParamsPreaches.preachDate = getParam('date');
+    searchParamsPreaches.mode = getParam('mode') || '';
     if (getParam('companyName')) {
       searchParamsPreaches.company.name = getParam('companyName');
     }
@@ -315,9 +316,11 @@ export default function ErjiList({
     }
 
     // 校区
-    if (placeSelectNow || placeSelectNow == undefined || _params.place) {
-      const _placeSelectNow = placeSelectNow || (_params.place == -1 ? '' : _params.place);
-      searchParams.place.campus = _placeSelectNow == -1 ? '' : _placeSelectNow;
+    if (type === 'preaches') {
+      if (placeSelectNow || placeSelectNow == undefined || _params.place) {
+        const _placeSelectNow = placeSelectNow || (_params.place == -1 ? '' : _params.place);
+        searchParams.place.campus = _placeSelectNow == -1 ? '' : _placeSelectNow;
+      }
     }
 
     // 识别类型

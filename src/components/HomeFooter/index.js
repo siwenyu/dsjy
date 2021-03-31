@@ -16,6 +16,9 @@ const icon6 = require('../../assets/images/footer-icon6.png');
 const icon7 = require('../../assets/images/footer-icon7.png');
 const icon8 = require('../../assets/images/footer-icon8.png');
 
+const qrcode1 = require('../../assets/images/footer-qrcode1.jpeg');
+const qrcode2 = require('../../assets/images/footer-qrcode2.jpeg');
+
 export default function HomeFooter({
   showHuoban, showInfo, partnersSize,
 }) {
@@ -118,34 +121,11 @@ export default function HomeFooter({
             </div>
             <div className="info-right">
               <div className="inf-right-con">
-              <div className="info-title">毕业生就业手续办理</div>
-                <div className="info-list">
-                  <div className="info-icon">
-                    <img alt="" src={icon1} />
-                  </div>
-                  <div className="info-text">
-                    周一至周五 
-                    <br />
-                    8:00-11:30/13:30-17:00
-                  </div>
+                <div className="info-title">扫码关注获取更多就业信息</div>
+                <div className="footer-qrcode">
+                  <img src={qrcode1} />
+                  <img src={qrcode2} />
                 </div>
-                <div className="info-list">
-                  <div className="info-icon">
-                    <img alt="" src={icon6} />
-                  </div>
-                  <div className="info-text">
-                  学生就业指导服务中心204
-                  </div>
-                </div>
-                <div className="info-list">
-                  <div className="info-icon">
-                    <img alt="" src={icon2} />
-                  </div>
-                  <div className="info-text">
-                  0431-85098826
-                  </div>
-                </div>
-                
               </div>
             </div>
           </div>

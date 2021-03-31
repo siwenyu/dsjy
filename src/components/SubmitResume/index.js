@@ -7,8 +7,10 @@ import './index.less';
 const jianliCode = require('../../assets/images/jianliCode.jpeg');
 
 export default function SubmitResume({
-  text, isShowIcon, modalTitle, clickHandle
+  text, isShowIcon, modalTitle, clickHandle, data,
 }) {
+  console.log('传进来的数据');
+  console.log(data);
   const [isShow, setIsShow] = useState(false);
   const showModal = () => {
     if (clickHandle) {
@@ -47,7 +49,7 @@ export default function SubmitResume({
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <img src={jianliCode} />
+        <img src={data?.qrCode?.url || jianliCode} />
       </Modal>
     </Fragment>
   );
