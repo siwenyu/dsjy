@@ -38,7 +38,7 @@ export default function StuSkill({
               return (
                 <TabPane tab={e.tabName} key={e.tabName}>
                   {
-                    e.list.map((item) => {
+                    e.list?.map((item) => {
                       return <SkillItem key={item.title} data={item} />
                     })
                   }

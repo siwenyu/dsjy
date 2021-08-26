@@ -42,7 +42,7 @@ export default function HomeNews({
           </div> */}
           <div className="new-list-normal">
             {
-              newsListRender.map((e, index) => <NewsItem pathName="detailgonggao" hasHover={true} key={e.title} hasTimeAfter={true} hasBefore={true} beforeType={2} isHot={true} data={e} />)
+              newsListRender.map((e, index) => <NewsItem pathName="detailgonggao" hasHover={true} key={e.infoId || e.title} hasTimeAfter={true} hasBefore={true} beforeType={2} isHot={true} data={e} />)
             }
           </div>
         </div>

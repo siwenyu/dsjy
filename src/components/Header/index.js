@@ -88,7 +88,7 @@ export default function Header() {
                     e.list && e.list.length > 0 && (
                       <div className={`subnav`}>
                         {
-                          e.list.map(itemItem => {
+                          e.list?.map(itemItem => {
                             return (
                               <div onClick={(event) => subNavClick(event, itemItem)} key={itemItem.text} className="subnav-item">
                                 {

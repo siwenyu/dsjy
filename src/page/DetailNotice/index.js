@@ -123,7 +123,7 @@ export default function DetailNotice() {
 
             {/* 单位介绍 */}
             <div className="gap-top-l erji-normal-title">招聘情况</div>
-            <div className="gap-top-m pre-content"  dangerouslySetInnerHTML={{__html: `${(detail.company && detail.company?.profile) || ''}`}}></div>
+            <div className="gap-top-m pre-content"  dangerouslySetInnerHTML={{__html: `${(detail.profile || detail.company && detail.company?.profile) || ''}`}}></div>
 
             {/* 招聘简章 */}
             {/* <div className="gap-top-l erji-normal-title">招聘对象</div>
@@ -145,7 +145,7 @@ export default function DetailNotice() {
                 {
                   detail.noticeJobs && detail.noticeJobs.map(e => {
                     return (
-                      <div key={e.job?.name} className="item">
+                      <div key={e.job?.jobId || e.job?.name} className="item">
                         <div className="item-info" onClick={() => window.open(`/detailjob?id=${e.jobId}&headerNav=11`)}>
                           <div className="before"></div>
                           <div className="title18">{e.job?.name}</div>
@@ -166,7 +166,26 @@ export default function DetailNotice() {
                 }
               </div>
             </div>
+            
+            {
+              detail.attachments?.length > 0 && (
+                <Fragment>
+                  <div className="gap-top-l erji-normal-title gap-bottom-s">相关附件</div>
 
+                  <div className="erji-down">
+                    {
+                      detail.attachments.map((e) => {
+                        return (
+                          <Fragment key={e.name}>
+                            <a key={e.name} href={e.url} className="erji-sub-title">{e.name}</a><br />
+                          </Fragment>
+                        )
+                      })
+                    }
+                  </div>
+                </Fragment>
+              )
+            }
           </div>
         </div>
       </div>

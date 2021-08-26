@@ -23,7 +23,7 @@ export default function NormalList({
           <div className="normal-list-item">
             {
               newsListRender.map((e, index) => {
-                return <NewsItem key={e.title} hasHover={true} hasTimeAfter={true} hasBefore={hasBefore} beforeType={beforeType} pathName={pathName} hasTime={hasTime} data={e} />
+                return <NewsItem key={e.infoId || e.preachId || e.title} hasHover={true} hasTimeAfter={true} hasBefore={hasBefore} beforeType={beforeType} pathName={pathName} hasTime={hasTime} data={e} />
               })
             }
           </div>

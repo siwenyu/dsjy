@@ -61,7 +61,7 @@ export default function BranchZhibuhuodong() {
                   <Fragment>
                     {
                       list.map((item, indexIndex) => {
-                        return <ItemNews onClick={() => window.open(`/normaldetail?id=${item.infoId}&secRNav=22&headerNav=13`)} pathName="normaldetail" hasHover={true} key={item.title} hasBefore={true} beforeType={2} hasTimeAfter={true} hasTime={false} data={item} />
+                        return <ItemNews onClick={() => window.open(`/normaldetail?id=${item.infoId}&secRNav=22&headerNav=13`)} pathName="normaldetail" hasHover={true} key={item.infoId || item.title} hasBefore={true} beforeType={2} hasTimeAfter={true} hasTime={false} data={item} />
                       }) 
                     }
                   </Fragment>

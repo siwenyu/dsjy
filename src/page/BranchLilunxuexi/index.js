@@ -66,7 +66,7 @@ export default function BranchLilunxuexi() {
                           pathName="normaldetail"
                           hasTime={false}
                           hasHover={true}
-                          key={item.title}
+                          key={item.infoId || item.title}
                           hasBefore={true}
                           hasTimeAfter={true}
                           beforeType={2}

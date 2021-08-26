@@ -34,6 +34,7 @@ import Gonggao from './page/SecGonggao';
 import BranchZhibufengcai from './page/BranchZhibufengcai';
 import BranchZhibuhuodong from './page/BranchZhibuhuodong';
 import BranchLilunxuexi from './page/BranchLilunxuexi';
+import BranchZhengqiuyijian from './page/BranchZhengqiuyijian';
 
 // 我是单位
 import UnitFabuzhiwei from './page/UnitFabuzhiwei';
@@ -195,6 +196,12 @@ export const routeList = [
       path: '/branchlilunxuexi',
       pageComponent: BranchLilunxuexi,
       navData: ['支部建设', '理论学习'],
+    },
+    {
+      title: '支部建设',
+      path: '/branchzhengqiuyijian',
+      pageComponent: BranchZhengqiuyijian,
+      navData: ['支部建设', '征求意见箱'],
     },
     {
       title: '我是单位',

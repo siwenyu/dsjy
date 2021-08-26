@@ -29,7 +29,7 @@ export default function UnitNews({
               <div className="new-list-normal">
                 {
                   newsListRender.map((e, index) => {
-                    return <NewsItem hasTime={false} key={e.title} hasBefore={true} beforeType={2} hasHover={false} isTwoLine={true} pathName="detailgonggao" data={e} />
+                    return <NewsItem hasTime={false} key={e.infoId || e.title} hasBefore={true} beforeType={2} hasHover={false} isTwoLine={true} pathName="detailgonggao" data={e} />
                   })
                 }
               </div>

@@ -306,7 +306,7 @@ export default function Student() {
                 <div className="down-list">
                   {
                     downList.map(e => {
-                      return <ItemDown key={e.title} data={e} />
+                      return <ItemDown key={Math.random()} data={e} />
                     })
                   }
                 </div>

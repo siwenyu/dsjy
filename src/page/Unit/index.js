@@ -93,7 +93,7 @@ export default function Unit() {
                   {
                     studentSource.map(e => {
                       return (
-                        <UnitShengyuansulanItem key={e.title} data={e} />
+                        <UnitShengyuansulanItem key={e.infoId || e.title} data={e} />
                       )
                     })
                   }
@@ -117,7 +117,7 @@ export default function Unit() {
                 {
                   xueyuanList.map(e => {
                     return (
-                      <div key={e.title} onClick={() => {window.open(`/normaldetail?headerNav=12&secLNav=11&id=${e.infoId}`)}} className="unit-yuanxijieshao-item">
+                      <div key={e.infoId || e.title} onClick={() => {window.open(`/normaldetail?headerNav=12&secLNav=11&id=${e.infoId}`)}} className="unit-yuanxijieshao-item">
                         <div className="normal-item-title c-line-clamp1 hover-item-nobg">{e.title}</div>
                       </div>
                     )

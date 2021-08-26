@@ -105,6 +105,12 @@ export const navLeftListBranch = [
     isActive: false,
     link: '',
     path: '/branchlilunxuexi?headerNav=13&secLNav=14'
+  },
+  {
+    text: '征求意见箱',
+    isActive: false,
+    link: '',
+    path: '/branchzhengqiuyijian?headerNav=13&secLNav=14'
   }
 ];
 
