@@ -56,7 +56,7 @@ export default function DetailJob() {
           },
           {
             key: '招聘人数',
-            value: _data.headCount || '暂无',
+            value: Number(_data.headCount) > 0 ? _data.headCount : '若干',
           },
         ];
         setListData(_listData);
